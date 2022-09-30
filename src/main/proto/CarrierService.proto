@@ -1,0 +1,19 @@
+syntax = "proto3";
+package grpc;
+
+option java_multiple_files = true;
+option java_package = "com.jbground.grpc.matarial";
+option java_outer_classname = "CarrierServiceOuterClass";
+
+service CarrierService {
+  rpc getCarriers(Carrier) returns (stream Carrier);
+}
+
+message Carrier {
+  string name = 1;
+  string machineName = 2;
+  string unitName = 3;
+  string type = 4;
+  string kind = 5;
+  string state = 6;
+}
